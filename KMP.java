@@ -20,27 +20,16 @@ public class KMP {
   
 
   public  void next( ) {
-    int i = 0, j = 1;
-    while (i < subStr.length()) {
-      System.out.println(i + " <> " + j);
-
-      if (subStr.charAt(i) != subStr.charAt(j)) {
-        System.out.println(subStr.charAt(i) + " != " + subStr.charAt(j));
-        if (i == 0)
+    int i = 0, j = -1;
+    while (i < subStr.length() -1 ) {
+      if ( j == -1 || subStr.charAt(i) == subStr.charAt(j)) {
+		  i++;
           j++;
-        else
-          j = next[i];
+		  next[i] = j;
       } else {
-        System.out.println(subStr.charAt(i) + "  " + subStr.charAt(j));
-        next[i] = ++j;
+		  j = next[j];
       }
-
-      i++;
     }
-  }
-
-  public static void KMPsearch( ){
-    
   }
 
   public static void  main(String[] args){
