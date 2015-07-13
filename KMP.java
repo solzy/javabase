@@ -23,11 +23,11 @@ public class KMP {
     int i = 0, j = -1;
     while (i < subStr.length() -1 ) {
       if ( j == -1 || subStr.charAt(i) == subStr.charAt(j)) {
-		  i++;
-          j++;
-		  next[i] = j;
+	i++;
+        j++;
+	next[i] = j;
       } else {
-		  j = next[j];
+	j = next[j];
       }
     }
   }
