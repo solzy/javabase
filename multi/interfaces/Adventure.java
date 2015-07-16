@@ -12,7 +12,7 @@ public class Adventure {
 		Hero h = new Hero();
 		t(h);
 		u(h);
-		v(h);
+		v(new Fly());
 		w(h);
 		
 		
